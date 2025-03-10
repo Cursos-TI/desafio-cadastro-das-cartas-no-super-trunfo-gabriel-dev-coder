@@ -17,20 +17,24 @@ int main() {
       char l_estado1;
       char cod1[4];
       char n_cidade1[20];
-      int populacao1;        //variaveis da carta-1
+      float populacao1;        //variaveis da carta-1
       int p_turistico1;
       float km1;
       float pib1;
-      
+
+      float den_pop1;       //população dividida pela area
+      float pib_cap1;       //pib divida pela população
       
       char l_estado2;
       char cod2[4];
       char n_cidade2[20];
-      int populacao2;       //variaveis a carta-2
+      float populacao2;       //variaveis da carta-2
       int p_turistico2;
       float km2;
       float pib2;
-       
+
+      float den_pop2;
+      float pib_cap2;       
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -52,7 +56,7 @@ int main() {
           scanf(" %19[^\n]", n_cidade1);         //Para aceitar espaços no nome da cidade, utilizei esse recurso
 
           printf("insira a população da cidade: \n");
-          scanf(" %d", &populacao1);
+          scanf(" %f", &populacao1);
 
           printf("insira a Área (em Km²): \n");
           scanf(" %f", &km1);
@@ -81,7 +85,7 @@ int main() {
           scanf(" %19[^\n]", n_cidade2);
 
           printf("insira a população da cidade:  \n");
-          scanf("  %d",  &populacao2);
+          scanf("  %f",  &populacao2);
 
           printf("insira a Área (em Km²): \n");
           scanf(" %f", &km2);
@@ -109,9 +113,13 @@ int main() {
                 printf("Estado: %c\n", l_estado1);
                 printf("Código: %s\n", cod1);
                 printf("Cidade: %s\n", n_cidade1);
-                printf("População: %d habitantes\n", populacao1);
+                printf("População: %.3f habitantes\n", populacao1);
                 printf("Área: %.5f km²\n", km1);
+                den_pop1 =(float) populacao1 / km1;
+                printf("Densidade populacional: %.5f hab/km² \n", den_pop1);
                 printf("PIB: %.2f bilhões\n", pib1);
+                pib_cap1 =(float) pib1 / populacao1;
+                printf("PIB per capta: %.3f reais\n", pib_cap1);
                 printf("Pontos turísticos: %d\n", p_turistico1);
             
             
@@ -121,9 +129,13 @@ int main() {
                 printf("Estado: %c\n", l_estado2);
                 printf("Código: %s\n", cod2);
                 printf("Cidade: %s\n", n_cidade2);
-                printf("População: %d habitantes\n", populacao2);
+                printf("População: %.3f habitantes\n", populacao2);
                 printf("Área: %.5f km²\n", km2);
+                den_pop2 =(float) populacao2 / km2;
+                printf("Densidade populacional: %.5f hab/km² \n", den_pop2);
                 printf("PIB: %.2f bilhões\n", pib2);
+                pib_cap2 =(float) pib2 / populacao2;
+                printf("PIB per capta: %.3f reais\n", pib_cap2);
                 printf("Pontos turísticos: %d\n", p_turistico2);
               
              
