@@ -17,7 +17,7 @@ int main() {
       char l_estado1;
       char cod1[4];
       char n_cidade1[20];
-      float populacao1;        //variaveis da carta-1
+      unsigned long int populacao1;        //variaveis da carta-1
       int p_turistico1;
       float km1;
       float pib1;
@@ -28,13 +28,19 @@ int main() {
       char l_estado2;
       char cod2[4];
       char n_cidade2[20];
-      float populacao2;       //variaveis da carta-2
+      unsigned long int populacao2;       //variaveis da carta-2
       int p_turistico2;
       float km2;
       float pib2;
 
       float den_pop2;
       float pib_cap2;       
+
+
+      float super_poder1;    // variavél do super poder
+      float super_poder2;
+     
+      int campea;            // variavel da campeã
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -56,7 +62,7 @@ int main() {
           scanf(" %19[^\n]", n_cidade1);         //Para aceitar espaços no nome da cidade, utilizei esse recurso
 
           printf("insira a população da cidade: \n");
-          scanf(" %f", &populacao1);
+          scanf(" %lu", &populacao1);
 
           printf("insira a Área (em Km²): \n");
           scanf(" %f", &km1);
@@ -85,7 +91,7 @@ int main() {
           scanf(" %19[^\n]", n_cidade2);
 
           printf("insira a população da cidade:  \n");
-          scanf("  %f",  &populacao2);
+          scanf("  %lu",  &populacao2);
 
           printf("insira a Área (em Km²): \n");
           scanf(" %f", &km2);
@@ -113,7 +119,7 @@ int main() {
                 printf("Estado: %c\n", l_estado1);
                 printf("Código: %s\n", cod1);
                 printf("Cidade: %s\n", n_cidade1);
-                printf("População: %.3f habitantes\n", populacao1);
+                printf("População: %.3lu habitantes\n", populacao1);
                 printf("Área: %.5f km²\n", km1);
                 den_pop1 =(float) populacao1 / km1;
                 printf("Densidade populacional: %.5f hab/km² \n", den_pop1);
@@ -129,16 +135,35 @@ int main() {
                 printf("Estado: %c\n", l_estado2);
                 printf("Código: %s\n", cod2);
                 printf("Cidade: %s\n", n_cidade2);
-                printf("População: %.3f habitantes\n", populacao2);
+                printf("População: %.3lu habitantes\n", populacao2);
                 printf("Área: %.5f km²\n", km2);
                 den_pop2 =(float) populacao2 / km2;
                 printf("Densidade populacional: %.5f hab/km² \n", den_pop2);
                 printf("PIB: %.2f bilhões\n", pib2);
                 pib_cap2 =(float) pib2 / populacao2;
                 printf("PIB per capta: %.3f reais\n", pib_cap2);
-                printf("Pontos turísticos: %d\n", p_turistico2);
+                printf("Pontos turísticos: %d\n\n", p_turistico2);
               
+            
+            // comparação dos super poderes carta 1 e 2 --
+             printf("Hora do jogo ;¬)\n"); 
+             printf("se a carta 1 vencer o resultado é (1)\n");         // mensagem de apresentação
+             printf("se a carta 2 vencer o resultado é (0)\n\n"); 
              
+             printf("campeã em número de habitantes: %d\n", populacao1 > populacao2);    // |  se a primeira carta for maior|
+             printf("campeã em área: %d\n", km1 > km2);                                  // |a resposta é 1 mas se for menor|
+             printf("campeã em densidade populacional: %d\n", den_pop1 < den_pop2);      // | a resposta sera 0 declarando  |
+             printf("campeã em PIB: %d\n", pib1 > pib2);                                 // | a vitoria da segunda carta    |
+             printf("campeã em PIB Per Capita: %d\n", pib_cap1 > pib_cap2);                                 
+             printf("campeã em pontos turísticos: %d\n", p_turistico1 > p_turistico2);   
+
+            // somatoria de poder total de cada carta--
+            super_poder1 = populacao1 + km1 + den_pop1 + pib1 + pib_cap1 + p_turistico1;
+            super_poder2 = populacao2 + km2 + den_pop2 + pib2 + pib_cap2 + p_turistico2;
+            
+            printf("campeã em super poder: %d\n", super_poder1 > super_poder2);
+            
+
 
     return 0;
 }
