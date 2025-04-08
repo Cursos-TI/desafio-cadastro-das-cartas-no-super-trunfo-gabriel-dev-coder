@@ -1,12 +1,12 @@
 #include <stdio.h>
-
+#include <conio.h>
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
-int main() {
+int main(void) {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
       
@@ -40,7 +40,10 @@ int main() {
       float super_poder1;    // variavél do super poder
       float super_poder2;
      
-      int campea;            // variavel da campeã
+      int campea;            //* variavel da campeã
+      
+      int menu;
+
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -161,8 +164,101 @@ int main() {
             super_poder1 = populacao1 + km1 + den_pop1 + pib1 + pib_cap1 + p_turistico1;
             super_poder2 = populacao2 + km2 + den_pop2 + pib2 + pib_cap2 + p_turistico2;
             
-            printf("campeã em super poder: %d\n", super_poder1 > super_poder2);
-            
+            printf("campeã em super poder: %d\n\n", super_poder1 > super_poder2);
+
+            //menu switch para escolher qual atributo numérico comparar com outro
+
+            printf("agora vamos analisar cada atributo e descobrir quem ganhou em cada\n\n");
+            printf("1-número de habitantes\n2-área\n3-densidade populacional\n4-pib\n5-pib per capita\n6-pontos turísticos\n7-super poder\n\n");
+
+            printf("digite o numero correspondente de 1 a 7");
+               scanf("%d", &menu);
+
+       switch (menu){
+    //caso 1----------------------------------      
+        case 1:  
+          if(populacao1 > populacao2)
+             printf("A carta 1 venceu!!\n");
+             printf("%ld",populacao1);
+             
+          if(populacao2 > populacao1)
+             printf("A carta 2 venceu!!\n");
+             printf("%ld",populacao2);
+      break;
+      
+    //caso 2----------------------------------       
+      case 2: 
+          if (km1 > km2)
+             printf("A carta 1 venceu!!\n");
+             printf("%.5f\n",km1);
+          
+          if(km1 < km2)
+             printf("A carta 2 venceu!!\n");
+             printf("%.5f\n",km2);
+      break;
+      
+   //caso 3---------------------------------- 
+      case 3:
+          if (den_pop1 < den_pop2)
+             printf("A carta 1 venceu!!\n");
+             printf("%.5f\n", den_pop1);
+          
+          if(den_pop2 < den_pop1)
+             printf("A carta 2 venceu!!\n");
+             printf("%.5f\n",den_pop2);
+      break;
+      
+   //caso 4----------------------------------    
+      case 4:
+          if (pib1 > pib2)
+             printf("A carta 1 venceu!!\n");
+             printf("%.2f\n", pib1);
+          
+          if(pib2 > pib1)
+             printf("A carta 2 venceu!!\n");
+             printf("%.2f\n", pib2);
+      break;
+      
+      
+   //caso 5----------------------------------   
+      case 5:  
+          if (pib_cap1 > pib_cap2)
+             printf("A carta 1 venceu!!\n");
+             printf("%.3f\n", pib_cap1);
+          
+          if(pib_cap2 > pib_cap1)
+             printf("A carta 2 venceu!!\n");
+             printf("%.3f\n", pib_cap2);
+      break;
+      
+   //caso 6----------------------------------   
+      case 6:  
+          if (p_turistico1 > p_turistico2)
+             printf("A carta 1 venceu!!\n");
+             printf("%d\n", p_turistico1);
+          
+          if(p_turistico2 > p_turistico1)
+             printf("A carta 2 venceu!!\n");
+             printf("%d\n", p_turistico2);
+      break;
+      
+   //caso 7----------------------------------   
+      case 7:  
+          if (super_poder1 > super_poder2)
+             printf("A carta 1 venceu!!\n");
+             printf("%f\n", super_poder1);
+          
+          if (super_poder2 > super_poder1)
+             printf("A carta 2 venceu!!\n");
+             printf("%f\n", super_poder2);
+      break;
+      
+      
+}      
+      
+      getch();
+
+
 
 
     return 0;
