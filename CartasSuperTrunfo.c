@@ -107,7 +107,7 @@ int main(void) {
 
 
                printf("\nótimo sua 2º carta foi registrada com sucesso!\n"); 
-               printf("aqui estão os dados cadastrados \n");     //mensagem de confirmação carta-2
+               printf("aqui estão os dados cadastrados \n\n\n\n");     //mensagem de confirmação carta-2
                
 
     
@@ -171,86 +171,112 @@ int main(void) {
             printf("agora vamos analisar cada atributo e descobrir quem ganhou em cada\n\n");
             printf("1-número de habitantes\n2-área\n3-densidade populacional\n4-pib\n5-pib per capita\n6-pontos turísticos\n7-super poder\n\n");
 
-            printf("digite o numero correspondente de 1 a 7");
+            printf("digite o numero correspondente de 1 a 7\n");
                scanf("%d", &menu);
 
        switch (menu){
     //caso 1----------------------------------      
         case 1:  
-          if(populacao1 > populacao2)
+          if(populacao1 > populacao2){
              printf("A carta 1 venceu!!\n");
              printf("%ld",populacao1);
              
-          if(populacao2 > populacao1)
+      }else if(populacao2 > populacao1){
              printf("A carta 2 venceu!!\n");
              printf("%ld",populacao2);
+             
+      }else{ printf("empate");
+      }
       break;
       
     //caso 2----------------------------------       
       case 2: 
-          if (km1 > km2)
+          if (km1 > km2){
              printf("A carta 1 venceu!!\n");
              printf("%.5f\n",km1);
           
-          if(km1 < km2)
+     }else if(km1 < km2){
              printf("A carta 2 venceu!!\n");
              printf("%.5f\n",km2);
+             
+     }else{ printf("empate");
+     }
       break;
       
    //caso 3---------------------------------- 
       case 3:
-          if (den_pop1 < den_pop2)
+          if (den_pop1 < den_pop2){
              printf("A carta 1 venceu!!\n");
              printf("%.5f\n", den_pop1);
           
-          if(den_pop2 < den_pop1)
+    }else if(den_pop2 < den_pop1){
              printf("A carta 2 venceu!!\n");
              printf("%.5f\n",den_pop2);
+             
+     }else{ printf("empate");
+     }      
+             
       break;
       
    //caso 4----------------------------------    
       case 4:
-          if (pib1 > pib2)
+          if (pib1 > pib2){
              printf("A carta 1 venceu!!\n");
              printf("%.2f\n", pib1);
           
-          if(pib2 > pib1)
+    }else if(pib2 > pib1){
              printf("A carta 2 venceu!!\n");
              printf("%.2f\n", pib2);
+             
+     }else{ printf("empate");
+     }       
+             
       break;
       
       
    //caso 5----------------------------------   
       case 5:  
-          if (pib_cap1 > pib_cap2)
+          if (pib_cap1 > pib_cap2){
              printf("A carta 1 venceu!!\n");
              printf("%.3f\n", pib_cap1);
           
-          if(pib_cap2 > pib_cap1)
+    }else if(pib_cap2 > pib_cap1){
              printf("A carta 2 venceu!!\n");
              printf("%.3f\n", pib_cap2);
+             
+     }else{ printf("empate");
+     }      
+             
       break;
       
    //caso 6----------------------------------   
       case 6:  
-          if (p_turistico1 > p_turistico2)
+          if (p_turistico1 > p_turistico2){
              printf("A carta 1 venceu!!\n");
              printf("%d\n", p_turistico1);
           
-          if(p_turistico2 > p_turistico1)
+      }else if(p_turistico2 > p_turistico1){
              printf("A carta 2 venceu!!\n");
              printf("%d\n", p_turistico2);
+             
+     }else{ printf("empate");
+     }       
+             
       break;
       
    //caso 7----------------------------------   
       case 7:  
-          if (super_poder1 > super_poder2)
+          if (super_poder1 > super_poder2){
              printf("A carta 1 venceu!!\n");
              printf("%f\n", super_poder1);
           
-          if (super_poder2 > super_poder1)
+    }else if(super_poder2 > super_poder1){
              printf("A carta 2 venceu!!\n");
              printf("%f\n", super_poder2);
+             
+     }else{ printf("empate");
+     }    
+             
       break;
       
       
